@@ -6,20 +6,17 @@ import random
 class WordFinder:
     """Find random words from a dictionary.
 
-    >>> wf = WordFinder("/Users/student/words.txt")
+    >>> swf = SpecialWordFinder("complex.txt")
     3 words read
 
-    >>> wf.random()
-    'cat'
+    >>> swf.random() in ["pear", "carrot", "kale"]
+    True
 
-    >>> wf.random()
-    'cat'
+    >>> swf.random() in ["pear", "carrot", "kale"]
+    True
 
-    >>> wf.random()
-    'porcupine'
-
-    >>> wf.random()
-    'dog'
+    >>> swf.random() in ["pear", "carrot", "kale"]
+    True
     """
 
     def __init__(self, path):
