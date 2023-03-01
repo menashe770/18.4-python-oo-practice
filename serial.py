@@ -33,8 +33,9 @@ class SerialGenerator:
 
     # Define a method to generate the next serial number
     def generate(self):
+        # increment the value of self.next by 1
+        self.next += 1
         # Subtract 1 from the next value and return the result
-        # (The first time generate is called, it returns the start value)
         return self.next - 1
 
     # Define a method to reset the next value to the start value
