@@ -4,7 +4,7 @@ import random
 
 
 class WordFinder:
-    """Find random words from a dictionary
+    """Find random words from a dictionary.
 
     >>> wf = WordFinder("/Users/student/words.txt")
     3 words read
@@ -37,3 +37,26 @@ class WordFinder:
     def random(self):
         # Return a random word from the list of words
         return random.choice(self.words)
+
+
+class SpecialWordFinder(WordFinder):
+    """Specialized WordFinder that excludes blank lines/comments."""
+
+    def parse(self, dict_file):
+
+        words = []
+
+        # Iterate through each line in the file
+        for line in dict_file:
+            # Strip any whitespace from the line to get the word
+            word = line.strip()
+
+            # Check if the word is not empty and does not start with a hash character
+            if word and not word.startswith("#"):
+                # If the word is valid, add it to the list of words
+                words.append(word)
+
+        # Return the list of valid words
+        return words
+
+        # return [w.strip() for w in dict_file if w.strip() and not w.startswith("#")]
